@@ -49,10 +49,19 @@ const AddTrip = ({ editing, onClose, defualtTripValues }: FormProps) => {
       body: values,
     };
     if (editing) {
-      const dirtyFields: (keyof TripType)[] = Object.keys(
+      type keys =
+        | "from"
+        | "to"
+        | "tripDate"
+        | "driverName"
+        | "driverCost"
+        | "tripPrice"
+        | "distance";
+      const dirtyFields: keys[] = Object.keys(
         form.formState.dirtyFields
-      ) as (keyof TripType)[];
-      const dirtyValues: Partial<TripType> = {};
+      ) as keys[];
+
+      const dirtyValues: Partial<Record<keys, any>> = {};
       for (const keys of dirtyFields) {
         dirtyValues[keys] = form.getValues(keys);
       }
@@ -133,7 +142,6 @@ const AddTrip = ({ editing, onClose, defualtTripValues }: FormProps) => {
                   <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
                       mode="single"
-                      selected={field.value}
                       onSelect={(e) => {
                         field.onChange(e?.toLocaleDateString());
                       }}

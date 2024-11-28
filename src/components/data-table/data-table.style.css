@@ -1,0 +1,25 @@
+.ag-theme-quartz {
+  --ag-row-border-width: 0.5px;
+  --ag-row-border-color: rgb(0, 0, 0);
+  /* --ag-selected-row-background-color: rgb(0, 255, 0, 0.1); */
+  /* --ag-alpine-active-color: #854fff !important; */
+}
+.ag-paging-page-size {
+  display: none !important;
+}
+.ag-header-row {
+  background: white;
+}
+
+.ag-theme-alpine .ag-header {
+  font-size: 14px;
+}
+.ag-row .ag-cell {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.ag-row-selected {
+  background-color: rgb(248, 179, 248) !important;
+}

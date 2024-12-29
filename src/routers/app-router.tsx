@@ -16,20 +16,28 @@ import Expenses from "../pages/dashboard/expenses";
 import Revenue from "../pages/dashboard/revenue";
 import Account from "../pages/dashboard/account";
 import App from "../App";
+import ProtectedRoute from "./Protected";
+import ErrorPage from "../pages/error-page";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+    errorElement: <ErrorPage />,
     children: [
-      { path: "", element: <Trips /> },
-      { path: "expenses", element: <Expenses /> },
-      { path: "revenue", element: <Revenue /> },
-      { path: "account", element: <Account /> },
+      { path: "", element: <Trips />, errorElement: <ErrorPage /> },
+      { path: "expenses", element: <Expenses />, errorElement: <ErrorPage /> },
+      { path: "revenue", element: <Revenue />, errorElement: <ErrorPage /> },
+      { path: "account", element: <Account />, errorElement: <ErrorPage /> },
     ],
   },
 ]);

@@ -52,36 +52,38 @@ const Revenue = () => {
 
       <div>
         <div className="border flex flex-col mb-44 items-center gap-12 p-2">
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Total Profits</p>
-            <p>{fomatCurrency(totalProfit)}</p>
+          <div className="border w-full p-2 flex flex-col gap-2 bg-green-400/20">
+            <p className="font-semibold text-green-800">Total Profits</p>
+            <p className="text-green-800">{fomatCurrency(totalProfit)}</p>
           </div>
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Total Expenses</p>
-            <p>{fomatCurrency(totalExpenses)}</p>
+          <div className="border w-full p-2 flex flex-col gap-2 bg-red-700/20">
+            <p className="font-semibold text-red-800">Total Expenses</p>
+            <p className="text-red-800">{fomatCurrency(totalExpenses)}</p>
           </div>
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Revenue</p>
-            <p>{fomatCurrency(revenueSum)}</p>
+          <div className="border w-full p-2 flex flex-col gap-2 bg-blue-600/20">
+            <p className="font-semibold text-blue-600">Revenue</p>
+            <p className="text-blue-600">{fomatCurrency(revenueSum)}</p>
           </div>
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Fuel Costs</p>
-            <p>{fomatCurrency(fuelCost)}</p>
+          <div className="border w-full bg-sky-600/20 p-2 flex flex-col gap-2">
+            <p className="font-semibold  text-sky-600">Fuel Costs</p>
+            <p className="text-sky-600">{fomatCurrency(fuelCost)}</p>
           </div>
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Maintainence Costs</p>
-            <p>{fomatCurrency(maintainenceCost)}</p>
+          <div className="border bg-violet-600/20 w-full p-2 flex flex-col gap-2">
+            <p className="font-semibold text-violet-600">Maintainence Costs</p>
+            <p className="text-violet-600">{fomatCurrency(maintainenceCost)}</p>
           </div>
 
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Outside Fuel Costs</p>
-            <p>
+          <div className="border w-full bg-yellow-400/20 p-2 flex flex-col gap-2">
+            <p className="font-semibold text-yellow-500">Outside Fuel Costs</p>
+            <p className="text-yellow-500">
               {fomatCurrency(revenue?.data?.outsideExpenses?.outsideFuelCost)}
             </p>
           </div>
-          <div className="border w-full bg-muted p-2 flex flex-col gap-2">
-            <p className="font-medium">Outside Maintainence Costs</p>
-            <p>
+          <div className="bg-lime-200/20 border w-full p-2 flex flex-col gap-2">
+            <p className="font-semibold text-lime-700">
+              Outside Maintainence Costs
+            </p>
+            <p className="text-lime-700">
               {fomatCurrency(
                 revenue?.data?.outsideExpenses?.outsideMaintenanceCost
               )}

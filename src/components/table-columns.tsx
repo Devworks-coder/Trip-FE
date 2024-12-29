@@ -172,7 +172,7 @@ export const ExpensesColumns: ColDef[] = [
 
           <BottomSheet
             children={
-              <AddFuel
+              <AddExpense
                 defaultValues={params?.data}
                 editing={true}
                 onClose={onOpen}
